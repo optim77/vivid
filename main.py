@@ -1,8 +1,10 @@
-from  cli import cli
+import asyncio
+from cli import cli
 
-def main():
-    cli.cli()
+
+async def main():
+    await cli.cli()
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
 
