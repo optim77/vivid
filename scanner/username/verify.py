@@ -10,7 +10,10 @@ async def scan(username: str, domain: str, text_verify: str) -> bool:
     :param text_verify: text in return when no user
     :return: exist state
     """
-    scraper = cloudscraper.create_scraper()
+    scraper = cloudscraper.create_scraper(browser={
+        "browser": "chrome",
+        "platform": "windows",
+    })
     res = await asyncio.to_thread(scraper.get, domain + username, headers=HEADERS)
     return verify(text_verify, res.text)
 
