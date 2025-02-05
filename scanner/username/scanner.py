@@ -1,6 +1,7 @@
 import asyncio
 from rich.console import Console
 
+from scanner.username.github import github
 from scanner.username.instagram import instagram
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
@@ -18,6 +19,7 @@ async def scanner(username: [str] = None) -> None:
         #"Medium": medium.check
         #"Steam": steam.check,
         #"Spotify": spotify.check,
+        #"Github": github.check
 
 
         # Problematic

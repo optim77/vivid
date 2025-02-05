@@ -15,7 +15,8 @@ async def scan(username: str, domain: str, text_verify: str) -> bool:
         "platform": "windows",
     })
     res = await asyncio.to_thread(scraper.get, domain + username, headers=HEADERS)
-    #print(res.text)
+    if res.status_code == 404:
+        return False
     return verify(text_verify, res.text)
 
 def verify(text_verify: str, text: str) -> bool:

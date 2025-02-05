@@ -7,6 +7,7 @@ MEDIUM_TEXT = "Out of nothing, something."
 SPOTIFY_URL = "https://open.spotify.com/user/"
 SPOTIFY_TEXT = "Page not found"
 
+GITHUB_URL = "https://github.com/"
 
 
 INSTAGRAM_URL = 'https://www.instagram.com/'
