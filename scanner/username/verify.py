@@ -15,6 +15,7 @@ async def scan(username: str, domain: str, text_verify: str) -> bool:
         "platform": "windows",
     })
     res = await asyncio.to_thread(scraper.get, domain + username, headers=HEADERS)
+    #print(res.text)
     return verify(text_verify, res.text)
 
 def verify(text_verify: str, text: str) -> bool:
@@ -23,4 +24,4 @@ def verify(text_verify: str, text: str) -> bool:
     :param text_verify: text in return when no user
     :return: no account text existence
     """
-    return True if re.search(text_verify, text) else False
+    return False if re.search(text_verify, text) else True

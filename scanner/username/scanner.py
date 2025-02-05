@@ -1,3 +1,4 @@
+import asyncio
 from rich.console import Console
 
 from scanner.username.instagram import instagram
@@ -6,22 +7,38 @@ from scanner.username.facebook import facebook
 from scanner.username.youtube import youtube
 from scanner.username.pinterest import pinterest
 from scanner.username.spotify import spotify
-async def scanner(domains: [str] = None) -> None:
+from scanner.username.steam import steam
+from scanner.username.tiktok import tiktok
+from scanner.username.medium import medium
+
+async def scanner(username: [str] = None) -> None:
     console = Console()
-    if domains:
-        pass
-    else:
-        await spotify.check("asdxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        #await instagram.scan("dupa154321312fdsffafdve2")
-        #console.print("[bold green]Facebook[/bold green]" if await facebook.check("ola") else "[bold red]Facebook[/bold red]")
-        #console.print("[bold green]Reddit[/bold green]" if await reddit.check("ola") else "[bold red]Reddit[/bold red]")
-        #console.print("[bold green]Reddit[/bold green]" if await youtube.check("ola") else "[bold red]Reddit[/bold red]")
 
-        #await youtube.check("dupa154321312fdsffafdve2")
-        #await pinterest.check("santisr0610")
+    services = {
+        #"Medium": medium.check
+        #"Steam": steam.check,
+        #"Spotify": spotify.check,
 
-        # loop = asyncio.get_running_loop()
-        # with ThreadPoolExecutor(max_workers=3) as executor:  # Możesz dostosować liczbę wątków
-        #     tasks = [loop.run_in_executor(executor, selenium_task, url) for url in urls]
-        #     results = await asyncio.gather(*tasks)
-        # return results
+
+        # Problematic
+        #"Reddit": reddit.check,
+        #"Facebook": facebook.check,
+        #"TikTok": tiktok.check
+        #Instagram
+    }
+
+    tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
+
+    results = await asyncio.gather(*tasks.values())
+
+    for (name, result) in zip(tasks.keys(), results):
+        color = "green" if result else "red"
+        console.print(f"[bold {color}]{name}[/bold {color}]")
+
+
+
+# loop = asyncio.get_running_loop()
+# with ThreadPoolExecutor(max_workers=3) as executor:  # Możesz dostosować liczbę wątków
+#     tasks = [loop.run_in_executor(executor, selenium_task, url) for url in urls]
+#     results = await asyncio.gather(*tasks)
+# return results

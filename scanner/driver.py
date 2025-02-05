@@ -18,6 +18,7 @@ def create_driver():
     }
     chrome_options = Options()
     chrome_options.add_experimental_option("prefs", {"intl.accept_languages": "en,en_US"})
+    chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
     #chrome_options.add_argument('--headless')
     #chrome_options.add_argument("--disable-gpu")
 
