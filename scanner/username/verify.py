@@ -3,7 +3,7 @@ import asyncio
 import cloudscraper
 from scanner.username.const import HEADERS
 
-async def scan(username: str, domain: str, text_verify: str) -> bool:
+async def scan(username: str, domain: str, text_verify: str = None, verify_by_http_code: bool = False) -> bool:
     """
     :param username: username to check
     :param domain: domain to check
@@ -15,9 +15,12 @@ async def scan(username: str, domain: str, text_verify: str) -> bool:
         "platform": "windows",
     })
     res = await asyncio.to_thread(scraper.get, domain + username, headers=HEADERS)
-    if res.status_code == 404:
+
+    if not text_verify and verify_by_http_code is True and res.status_code == 404:
         return False
-    return verify(text_verify, res.text)
+    elif text_verify:
+        return verify(text_verify, res.text)
+    else: return True
 
 def verify(text_verify: str, text: str) -> bool:
     """

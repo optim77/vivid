@@ -5,12 +5,14 @@ from scanner.username.github import github
 from scanner.username.instagram import instagram
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
+from scanner.username.twitch import twitch
 from scanner.username.youtube import youtube
 from scanner.username.pinterest import pinterest
 from scanner.username.spotify import spotify
 from scanner.username.steam import steam
 from scanner.username.tiktok import tiktok
 from scanner.username.medium import medium
+from scanner.username.cda import cda
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -19,13 +21,16 @@ async def scanner(username: [str] = None) -> None:
         #"Medium": medium.check
         #"Steam": steam.check,
         #"Spotify": spotify.check,
-        #"Github": github.check
+        "Github": github.check,
+        "CDA": cda.check
+
 
 
         # Problematic
-        #"Reddit": reddit.check,
-        #"Facebook": facebook.check,
-        #"TikTok": tiktok.check
+        # "Reddit": reddit.check,
+        # "Facebook": facebook.check,
+        # "TikTok": tiktok.check
+        # "Twitch": twitch.check
         #Instagram
     }
 

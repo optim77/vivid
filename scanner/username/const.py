@@ -9,6 +9,7 @@ SPOTIFY_TEXT = "Page not found"
 
 GITHUB_URL = "https://github.com/"
 
+CDA_URL = "https://www.cda.pl/"
 
 INSTAGRAM_URL = 'https://www.instagram.com/'
 
@@ -29,7 +30,8 @@ TIKTOK_URL = "https://tiktok.com/@"
 TIKTOK_TEXT = "Couldn't find this account"
 
 
-
+TWITCH_URL = "https://www.twitch.tv/"
+TWITCH_TEXT = "This content isn't available right now"
 
 
 HEADERS = {
