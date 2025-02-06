@@ -26,7 +26,7 @@ async def cli():
     args = parser.parse_args()
 
     console.print(intro)
-    await scanner("ola")
+    await scanner("ola312xrx23r2")
     if args.l:
         console.print("List of available domains:")
         return

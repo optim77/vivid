@@ -26,7 +26,7 @@ async def scanner(username: [str] = None) -> None:
         #"Github": github.check,
         #"CDA": cda.check
         #"JBZD": cda.check,
-        #"Kwejk": kwejk.check,
+        "Kwejk": kwejk.check,
         "Genius": genius.check,
 
 
@@ -44,8 +44,8 @@ async def scanner(username: [str] = None) -> None:
     results = await asyncio.gather(*tasks.values())
 
     for (name, result) in zip(tasks.keys(), results):
-        color = "green" if result else "red"
-        console.print(f"[bold {color}]{name}[/bold {color}]")
+        color = "green" if result['result'] else "red"
+        console.print(f"[bold {color}]{name} {result['url']}[/bold {color}]")
 
 
 
