@@ -9,7 +9,11 @@ SPOTIFY_TEXT = "Page not found"
 
 GITHUB_URL = "https://github.com/"
 
+
 CDA_URL = "https://www.cda.pl/"
+JBZD_URL = "https://jbzd.com.pl/uzytkownik/"
+KWEJK_URL = "https://kwejk.pl/uzytkownik/"
+GENIUS_URL = "https://genius.com/"
 
 INSTAGRAM_URL = 'https://www.instagram.com/'
 

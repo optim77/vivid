@@ -1,6 +1,7 @@
 import asyncio
 from rich.console import Console
 
+from scanner.username.genius import genius
 from scanner.username.github import github
 from scanner.username.instagram import instagram
 from scanner.username.reddit import reddit
@@ -13,6 +14,7 @@ from scanner.username.steam import steam
 from scanner.username.tiktok import tiktok
 from scanner.username.medium import medium
 from scanner.username.cda import cda
+from scanner.username.kwejk import kwejk
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -21,8 +23,11 @@ async def scanner(username: [str] = None) -> None:
         #"Medium": medium.check
         #"Steam": steam.check,
         #"Spotify": spotify.check,
-        "Github": github.check,
-        "CDA": cda.check
+        #"Github": github.check,
+        #"CDA": cda.check
+        #"JBZD": cda.check,
+        #"Kwejk": kwejk.check,
+        "Genius": genius.check,
 
 
 
@@ -31,7 +36,7 @@ async def scanner(username: [str] = None) -> None:
         # "Facebook": facebook.check,
         # "TikTok": tiktok.check
         # "Twitch": twitch.check
-        #Instagram
+        # "Instagram": instagram.check
     }
 
     tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
