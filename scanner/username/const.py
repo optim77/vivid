@@ -16,6 +16,8 @@ KWEJK_URL = "https://kwejk.pl/uzytkownik/"
 GENIUS_URL = "https://genius.com/"
 OLX_URL = "https://www.olx.pl/oferty/uzytkownik/"
 OLX_TEXT = "Na OLX od"
+WATTPAD_URL = "https://www.wattpad.com/user/"
+
 
 NINE_GAG_URL = "https://9gag.com/u/"
 

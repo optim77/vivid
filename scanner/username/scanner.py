@@ -7,6 +7,7 @@ from scanner.username.instagram import instagram
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
 from scanner.username.twitch import twitch
+from scanner.username.wattpad import wattpad
 from scanner.username.youtube import youtube
 from scanner.username.pinterest import pinterest
 from scanner.username.spotify import spotify
@@ -16,7 +17,8 @@ from scanner.username.medium import medium
 from scanner.username.cda import cda
 from scanner.username.kwejk import kwejk
 from scanner.username.olx import olx
-#from scanner.username.nine_gag import ngag
+from scanner.username.nine_gag import ngag
+
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -31,7 +33,8 @@ async def scanner(username: [str] = None) -> None:
         #"Kwejk": kwejk.check,
         #"Genius": genius.check,
         #"OLX": olx.check,
-        "9Gag": ngag.check
+        "9Gag": ngag.check,
+        "Wattpad": wattpad.check,
 
 
 
