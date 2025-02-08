@@ -1,5 +1,3 @@
-from typing import Dict
-
 from scanner.username.const import MEDIUM_URL, MEDIUM_TEXT
 from scanner.username.verify import scan
 

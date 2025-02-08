@@ -15,6 +15,8 @@ from scanner.username.tiktok import tiktok
 from scanner.username.medium import medium
 from scanner.username.cda import cda
 from scanner.username.kwejk import kwejk
+from scanner.username.olx import olx
+#from scanner.username.nine_gag import ngag
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -27,7 +29,9 @@ async def scanner(username: [str] = None) -> None:
         #"CDA": cda.check
         #"JBZD": cda.check,
         #"Kwejk": kwejk.check,
-        "Genius": genius.check,
+        #"Genius": genius.check,
+        #"OLX": olx.check,
+        "9Gag": ngag.check
 
 
 
