@@ -26,7 +26,7 @@ async def scanner(username: [str] = None) -> None:
         #"Github": github.check,
         #"CDA": cda.check
         #"JBZD": cda.check,
-        "Kwejk": kwejk.check,
+        #"Kwejk": kwejk.check,
         "Genius": genius.check,
 
 
@@ -37,6 +37,7 @@ async def scanner(username: [str] = None) -> None:
         # "TikTok": tiktok.check
         # "Twitch": twitch.check
         # "Instagram": instagram.check
+        # "Pinterest": pinterest.check
     }
 
     tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
