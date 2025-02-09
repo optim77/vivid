@@ -1,3 +1,4 @@
 .idea
 __pycache__
 *.pyc
+cli/__pycache__/cli.cpython-310.pyc

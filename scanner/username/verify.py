@@ -11,7 +11,7 @@ async def scan(username: str,
     :param username: username to check
     :param domain: domain to check
     :param text_verify: text in return when no user
-    :param verify_by_http_code: check by returning http code
+    :param verify_by_http_code: check by returning code
     :param http_code: http code to verify, in most case 404 but some 301
     :return: exist state
     """

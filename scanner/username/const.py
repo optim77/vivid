@@ -17,7 +17,13 @@ GENIUS_URL = "https://genius.com/"
 OLX_URL = "https://www.olx.pl/oferty/uzytkownik/"
 OLX_TEXT = "Na OLX od"
 WATTPAD_URL = "https://www.wattpad.com/user/"
+ARTSTATION_URL = "https://www.artstation.com/api/v2/search/users/autocomplete.json?only_artists=true&query="
+ARTSTATION_TEXT = '"total_count":0'
 
+DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
+DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'
+
+FIVERR_URL = "https://www.fiverr.com/"
 
 NINE_GAG_URL = "https://9gag.com/u/"
 
