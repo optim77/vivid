@@ -20,6 +20,15 @@ WATTPAD_URL = "https://www.wattpad.com/user/"
 ARTSTATION_URL = "https://www.artstation.com/api/v2/search/users/autocomplete.json?only_artists=true&query="
 ARTSTATION_TEXT = '"total_count":0'
 
+PATRONITE_URL = "https://patronite.pl/"
+LEETCODE_URL = "https://leetcode.com/u/"
+LEETCODE_TEXT = "username"
+
+CODEPEN_URL = "https://codepen.io/"
+HUGGINGFACE_URL = "https://huggingface.co/"
+
+DEVIANTART_URL = "https://www.deviantart.com/"
+
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'
 

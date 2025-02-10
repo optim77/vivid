@@ -1,10 +1,14 @@
 import asyncio
 from rich.console import Console
 
+from scanner.username.deviantart import deviantart
 from scanner.username.fiverr import fiverr
 from scanner.username.genius import genius
 from scanner.username.github import github
+from scanner.username.huggingface import huggingface
 from scanner.username.instagram import instagram
+from scanner.username.leetcode import leetcode
+from scanner.username.patronite import patronite
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
 from scanner.username.twitch import twitch
@@ -21,6 +25,8 @@ from scanner.username.olx import olx
 from scanner.username.nine_gag import ngag
 from scanner.username.duolingo import duolingo
 from scanner.username.artstation import artstation
+from scanner.username.codepen import codepen
+
 async def scanner(username: [str] = None) -> None:
     console = Console()
 
@@ -37,17 +43,18 @@ async def scanner(username: [str] = None) -> None:
         #"OLX": olx.check,
         #"9Gag": ngag.check,
         #"Wattpad": wattpad.check,
-        "Artstation": artstation.check
+        #"Artstation": artstation.check,
+        #"Patronite": patronite.check,
+        "Codepen": codepen.check,
+        "Huggingface": huggingface.check,
+        "Deviantart": deviantart.check,
+
+
 
         # TODO: add these:
-        # patronite
         # buzzfeed
         # clubhouse
-        # codepen
-        # deviantart
         # giphy
-        # huggingface
-        # leetcode
 
 
         # Problematic
@@ -59,6 +66,7 @@ async def scanner(username: [str] = None) -> None:
         # "Pinterest": pinterest.check
         # "Duolingo": duolingo.check,
         # "Fiverr": fiverr.check
+        # "Leetcode": leetcode.check,
     }
 
     tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
