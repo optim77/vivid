@@ -26,6 +26,7 @@ LEETCODE_TEXT = "username"
 
 CODEPEN_URL = "https://codepen.io/"
 HUGGINGFACE_URL = "https://huggingface.co/"
+CLUBHOUSE_URL = "https://www.clubhouse.com/@"
 
 DEVIANTART_URL = "https://www.deviantart.com/"
 
