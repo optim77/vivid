@@ -1,6 +1,7 @@
 import asyncio
 from rich.console import Console
 
+from scanner.username.buzzfeed import buzzfeed
 from scanner.username.clubhouse import clubhouse
 from scanner.username.deviantart import deviantart
 from scanner.username.fiverr import fiverr
@@ -48,15 +49,16 @@ async def scanner(username: [str] = None) -> None:
         #"Patronite": patronite.check,
         #"Codepen": codepen.check,
         #"Huggingface": huggingface.check,
-        "Deviantart": deviantart.check,
-        "Clubhouse": clubhouse.check,
+        #"Deviantart": deviantart.check,
+        #"Clubhouse": clubhouse.check,
+        "Buzzfeed": buzzfeed.check,
 
 
 
         # TODO: add these:
-        # buzzfeed
         # giphy
         # https://www.g2a.com/pl/user/
+        # https://www.codewars.com/users/
 
 
         # Problematic
