@@ -28,6 +28,7 @@ CODEPEN_URL = "https://codepen.io/"
 HUGGINGFACE_URL = "https://huggingface.co/"
 CLUBHOUSE_URL = "https://www.clubhouse.com/@"
 BUZZFEED_URL = "https://www.buzzfeed.com/"
+CODEWARS_URL = "https://www.codewars.com/users/"
 
 DEVIANTART_URL = "https://www.deviantart.com/"
 

@@ -3,6 +3,7 @@ from rich.console import Console
 
 from scanner.username.buzzfeed import buzzfeed
 from scanner.username.clubhouse import clubhouse
+from scanner.username.codewars import codewars
 from scanner.username.deviantart import deviantart
 from scanner.username.fiverr import fiverr
 from scanner.username.genius import genius
@@ -52,6 +53,7 @@ async def scanner(username: [str] = None) -> None:
         #"Deviantart": deviantart.check,
         #"Clubhouse": clubhouse.check,
         "Buzzfeed": buzzfeed.check,
+        "Codewars": codewars.check,
 
 
 
