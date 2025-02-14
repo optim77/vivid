@@ -4,10 +4,12 @@ from rich.console import Console
 from scanner.username.buzzfeed import buzzfeed
 from scanner.username.clubhouse import clubhouse
 from scanner.username.codewars import codewars
+from scanner.username.cracked import cracked
 from scanner.username.deviantart import deviantart
 from scanner.username.fiverr import fiverr
 from scanner.username.genius import genius
 from scanner.username.github import github
+from scanner.username.hackersploit import hackersploit
 from scanner.username.huggingface import huggingface
 from scanner.username.instagram import instagram
 from scanner.username.leetcode import leetcode
@@ -52,15 +54,17 @@ async def scanner(username: [str] = None) -> None:
         #"Huggingface": huggingface.check,
         #"Deviantart": deviantart.check,
         #"Clubhouse": clubhouse.check,
-        "Buzzfeed": buzzfeed.check,
-        "Codewars": codewars.check,
+        #"Buzzfeed": buzzfeed.check,
+        #"Codewars": codewars.check,
+        "Hackersploit": hackersploit.check,
+
 
 
 
         # TODO: add these:
         # giphy
         # https://www.g2a.com/pl/user/
-        # https://www.codewars.com/users/
+        # https://0x00sec.org/u/
 
 
         # Problematic
@@ -73,6 +77,7 @@ async def scanner(username: [str] = None) -> None:
         # "Duolingo": duolingo.check,
         # "Fiverr": fiverr.check
         # "Leetcode": leetcode.check,
+        # "Cracked": cracked.check,
     }
 
     tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
