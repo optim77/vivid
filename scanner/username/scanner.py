@@ -16,6 +16,7 @@ from scanner.username.leetcode import leetcode
 from scanner.username.patronite import patronite
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
+from scanner.username.snapchat import snapchat
 from scanner.username.twitch import twitch
 from scanner.username.wattpad import wattpad
 from scanner.username.youtube import youtube
@@ -56,15 +57,16 @@ async def scanner(username: [str] = None) -> None:
         #"Clubhouse": clubhouse.check,
         #"Buzzfeed": buzzfeed.check,
         #"Codewars": codewars.check,
-        "Hackersploit": hackersploit.check,
+        #"Hackersploit": hackersploit.check,
+        "Snapchat": snapchat.check,
 
 
 
 
         # TODO: add these:
-        # giphy
         # https://www.g2a.com/pl/user/
         # https://0x00sec.org/u/
+        # https://www.strava.com/athletes/
 
 
         # Problematic

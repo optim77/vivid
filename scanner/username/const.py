@@ -30,8 +30,11 @@ CLUBHOUSE_URL = "https://www.clubhouse.com/@"
 BUZZFEED_URL = "https://www.buzzfeed.com/"
 CODEWARS_URL = "https://www.codewars.com/users/"
 HACKERSPLOIT_URL = "https://forum.hackersploit.org/u/"
+SNAPCHAT_URL = "https://www.snapchat.com/add/"
 DEVIANTART_URL = "https://www.deviantart.com/"
 CRACKED_URL = "https://www.cracked.com/members/"
+STRAVA_URL = "https://www.strava.com/athletes/"
+
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'
 
