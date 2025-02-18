@@ -36,6 +36,8 @@ CRACKED_URL = "https://www.cracked.com/members/"
 STRAVA_URL = "https://www.strava.com/athletes/"
 TRACKTRAIN_URL = "https://traktrain.com/"
 TELEGRAM_URL = "https://t.me/"
+TRADINGVIEW_URL = "https://www.tradingview.com/u/"
+TRAKT_URL = "https://trakt.tv/users/"
 
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'

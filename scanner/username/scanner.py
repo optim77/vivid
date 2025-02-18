@@ -17,6 +17,8 @@ from scanner.username.patronite import patronite
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
 from scanner.username.snapchat import snapchat
+from scanner.username.tradingview import tradingview
+from scanner.username.trakt import trakt
 from scanner.username.twitch import twitch
 from scanner.username.wattpad import wattpad
 from scanner.username.youtube import youtube
@@ -58,7 +60,9 @@ async def scanner(username: [str] = None) -> None:
         #"Buzzfeed": buzzfeed.check,
         #"Codewars": codewars.check,
         #"Hackersploit": hackersploit.check,
-        "Snapchat": snapchat.check,
+        #"Snapchat": snapchat.check,
+        "Tradingview": tradingview.check,
+        "Trakt": trakt.check,
 
 
 
@@ -66,7 +70,7 @@ async def scanner(username: [str] = None) -> None:
         # TODO: add these:
         # https://www.g2a.com/pl/user/
         # https://0x00sec.org/u/
-        # https://www.strava.com/athletes/
+        # https://trello.com/u/ola
 
 
         # Problematic
