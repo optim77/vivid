@@ -39,7 +39,8 @@ TELEGRAM_URL = "https://t.me/"
 TRADINGVIEW_URL = "https://www.tradingview.com/u/"
 TRAKT_URL = "https://trakt.tv/users/"
 TRYHACKME_URL = "https://tryhackme.com/api/user/exist/"
-TRYHACKME_TEXT = '{"success":true}'
+TRYHACKME_TEXT = '{"success":false}'
+UNSPLASH_URL = 'https://unsplash.com/@'
 
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'
