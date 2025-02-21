@@ -34,6 +34,7 @@ from scanner.username.nine_gag import ngag
 from scanner.username.duolingo import duolingo
 from scanner.username.artstation import artstation
 from scanner.username.codepen import codepen
+from scanner.username.tryhackme import tryhackme
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -61,8 +62,9 @@ async def scanner(username: [str] = None) -> None:
         #"Codewars": codewars.check,
         #"Hackersploit": hackersploit.check,
         #"Snapchat": snapchat.check,
-        "Tradingview": tradingview.check,
+        #"Tradingview": tradingview.check,
         "Trakt": trakt.check,
+        "Tryhackme": tryhackme.check,
 
 
 
