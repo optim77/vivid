@@ -21,6 +21,7 @@ from scanner.username.tradingview import tradingview
 from scanner.username.trakt import trakt
 from scanner.username.twitch import twitch
 from scanner.username.unsplash import unsplash
+from scanner.username.vimeo import vimeo
 from scanner.username.wattpad import wattpad
 from scanner.username.youtube import youtube
 from scanner.username.pinterest import pinterest
@@ -67,6 +68,7 @@ async def scanner(username: [str] = None) -> None:
         "Trakt": trakt.check,
         "Tryhackme": tryhackme.check,
         "Unsplash": unsplash.check,
+        "Vimeo": vimeo.check,
 
 
 
