@@ -1,8 +1,8 @@
 import argparse
 from rich.console import Console
 from scanner.username.scanner import scanner
-
-
+import scanner.username
+import pkgutil
 
 async def cli():
     console = Console()
@@ -28,6 +28,7 @@ async def cli():
     console.print(intro)
     await scanner("ola")
     if args.l:
+        console.print([module.name for module in pkgutil.iter_modules(scanner.username.__path__)])
         console.print("List of available domains:")
         return
 
