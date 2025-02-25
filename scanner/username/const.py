@@ -42,6 +42,7 @@ TRYHACKME_URL = "https://tryhackme.com/api/user/exist/"
 TRYHACKME_TEXT = '{"success":false}'
 UNSPLASH_URL = 'https://unsplash.com/@'
 VIMEO_URL = 'https://vimeo.com/'
+WYKOP_URL = "https://wykop.pl/ludzie/"
 
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'

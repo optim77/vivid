@@ -1,0 +1,1 @@
+- In future add functionality to check mail if registered on sites 
