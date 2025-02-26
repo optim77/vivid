@@ -1,5 +1,6 @@
 import asyncio
 from rich.console import Console
+from selenium.webdriver.common.devtools.v85.runtime import await_promise
 
 from scanner.username.buzzfeed import buzzfeed
 from scanner.username.clubhouse import clubhouse
@@ -13,6 +14,7 @@ from scanner.username.hackersploit import hackersploit
 from scanner.username.huggingface import huggingface
 from scanner.username.instagram import instagram
 from scanner.username.leetcode import leetcode
+from scanner.username.npm import npm
 from scanner.username.patronite import patronite
 from scanner.username.reddit import reddit
 from scanner.username.facebook import facebook
@@ -65,10 +67,11 @@ async def scanner(username: [str] = None) -> None:
         #"Hackersploit": hackersploit.check,
         #"Snapchat": snapchat.check,
         #"Tradingview": tradingview.check,
-        "Trakt": trakt.check,
-        "Tryhackme": tryhackme.check,
-        "Unsplash": unsplash.check,
+        #"Trakt": trakt.check,
+        #"Tryhackme": tryhackme.check,
+        #"Unsplash": unsplash.check,
         "Vimeo": vimeo.check,
+        "NPM": npm.check,
 
 
 
@@ -99,8 +102,6 @@ async def scanner(username: [str] = None) -> None:
     for (name, result) in zip(tasks.keys(), results):
         color = "green" if result['result'] else "red"
         console.print(f"[bold {color}]{name} {result['url']}[/bold {color}]")
-
-
 
 # loop = asyncio.get_running_loop()
 # with ThreadPoolExecutor(max_workers=3) as executor:  # Możesz dostosować liczbę wątków

@@ -1,7 +1,6 @@
 import argparse
 from rich.console import Console
 from scanner.username.scanner import scanner
-import scanner.username
 import pkgutil
 
 async def cli():
@@ -23,10 +22,13 @@ async def cli():
     parser.add_argument("-e", type=str, nargs="?", help="Email to check")
     parser.add_argument("-d", type=str, nargs="+", help="Domain to validate a single domain (e.g., gmail) or a collection (e.g., gmail, amazon)")
     parser.add_argument("-l", action="store_true", help="List available domains")
+    parser.add_argument("-csv", action="store_true", help="List available domains")
     args = parser.parse_args()
 
     console.print(intro)
+
     await scanner("ola")
+
     if args.l:
         console.print([module.name for module in pkgutil.iter_modules(scanner.username.__path__)])
         console.print("List of available domains:")
