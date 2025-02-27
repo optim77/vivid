@@ -25,6 +25,7 @@ from scanner.username.twitch import twitch
 from scanner.username.unsplash import unsplash
 from scanner.username.vimeo import vimeo
 from scanner.username.wattpad import wattpad
+from scanner.username.wordpress import wordpress
 from scanner.username.youtube import youtube
 from scanner.username.pinterest import pinterest
 from scanner.username.spotify import spotify
@@ -72,6 +73,7 @@ async def scanner(username: [str] = None) -> None:
         #"Unsplash": unsplash.check,
         "Vimeo": vimeo.check,
         "NPM": npm.check,
+        "Wordpress": wordpress.check,
 
 
 
