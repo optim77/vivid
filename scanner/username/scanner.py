@@ -40,6 +40,7 @@ from scanner.username.duolingo import duolingo
 from scanner.username.artstation import artstation
 from scanner.username.codepen import codepen
 from scanner.username.tryhackme import tryhackme
+from scanner.username.devrant import devrant
 
 async def scanner(username: [str] = None) -> None:
     console = Console()
@@ -74,6 +75,7 @@ async def scanner(username: [str] = None) -> None:
         "Vimeo": vimeo.check,
         "NPM": npm.check,
         "Wordpress": wordpress.check,
+        "Devrant": devrant.check
 
 
 
@@ -106,7 +108,7 @@ async def scanner(username: [str] = None) -> None:
         console.print(f"[bold {color}]{name} {result['url']}[/bold {color}]")
 
 # loop = asyncio.get_running_loop()
-# with ThreadPoolExecutor(max_workers=3) as executor:  # Możesz dostosować liczbę wątków
+# with ThreadPoolExecutor(max_workers=3) as executor:
 #     tasks = [loop.run_in_executor(executor, selenium_task, url) for url in urls]
 #     results = await asyncio.gather(*tasks)
 # return results
