@@ -44,8 +44,9 @@ UNSPLASH_URL = 'https://unsplash.com/@'
 VIMEO_URL = 'https://vimeo.com/'
 WYKOP_URL = "https://wykop.pl/ludzie/"
 NPM_URL = "https://www.npmjs.com/~"
-WORDPRESS_URL = "https://profiles.wordpress.org/ola"
+WORDPRESS_URL = "https://profiles.wordpress.org/"
 DEVRANT_URL = "https://devrant.com/users"
+ABOUT_ME_URL = "https://about.me/"
 
 DUOLINGO_URL = "https://www.duolingo.com/2017-06-30/users?fields=users%7Bid%7D&username="
 DUOLINGO_TEXT = r'{"users":\[\{"id":[0-9]+\}\]}'

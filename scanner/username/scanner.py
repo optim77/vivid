@@ -1,4 +1,6 @@
 import asyncio
+import csv
+
 from rich.console import Console
 from selenium.webdriver.common.devtools.v85.runtime import await_promise
 
@@ -41,8 +43,9 @@ from scanner.username.artstation import artstation
 from scanner.username.codepen import codepen
 from scanner.username.tryhackme import tryhackme
 from scanner.username.devrant import devrant
+from scanner.username.aboutme import aboutme
 
-async def scanner(username: [str] = None) -> None:
+async def scanner(username: [str] = None, csv_output: bool = False) -> None:
     console = Console()
 
     services = {
@@ -75,7 +78,8 @@ async def scanner(username: [str] = None) -> None:
         "Vimeo": vimeo.check,
         "NPM": npm.check,
         "Wordpress": wordpress.check,
-        "Devrant": devrant.check
+        "Devrant": devrant.check,
+        "About me": aboutme.check
 
 
 
@@ -100,12 +104,23 @@ async def scanner(username: [str] = None) -> None:
     }
 
     tasks = {name: asyncio.create_task(func(username)) for name, func in services.items()}
-
     results = await asyncio.gather(*tasks.values())
+    output_data = []
+
 
     for (name, result) in zip(tasks.keys(), results):
         color = "green" if result['result'] else "red"
         console.print(f"[bold {color}]{name} {result['url']}[/bold {color}]")
+
+        if csv_output:
+            output_data.append([name, result['url'], result['result']])
+
+    if csv_output and output_data:
+        with open("results.csv", mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            writer.writerow(["Service", "URL", "Exists"])
+            writer.writerows(output_data)
+        console.print(f"[bold blue]Results saved to results.csv[/bold blue]")
 
 # loop = asyncio.get_running_loop()
 # with ThreadPoolExecutor(max_workers=3) as executor:
