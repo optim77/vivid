@@ -1,6 +1,7 @@
 import argparse
 from rich.console import Console
 
+from fuzzer.fuzzer import fuzzer
 from scanner.gravatar.gravatar import gravatar
 from scanner.username.scanner import scanner
 import pkgutil
@@ -26,6 +27,7 @@ async def cli():
     parser.add_argument("-l", action="store_true", help="List available domains")
     parser.add_argument("-csv", action="store_true", help="Export result to csv file")
     parser.add_argument("-gravatar", type=str, nargs="?", help="Check if hash created based on inserted mail")
+    parser.add_argument("-f", type=str, nargs='?', help="Domain to fuzz")
     args = parser.parse_args()
 
     console.print(intro)
@@ -39,8 +41,8 @@ async def cli():
     if args.gravatar:
         gravatar(args.gravatar)
 
-    if  args.e == '' or args.u == '':
-        console.print("Error: Email or username parameter is required unless using")
+    if  args.e == '' or args.u == '' or args.f == '':
+        console.print("Error: Need to specify action and pass arguments")
         parser.print_help()
         return
 
@@ -49,6 +51,9 @@ async def cli():
             await scanner(args.u, csv_output=True)
         else:
             await scanner(args.u, csv_output=False)
+
+    if args.f:
+        await fuzzer(args.f, False)
 
     #console.print(f"Inserted mail: {args.email}")
 
