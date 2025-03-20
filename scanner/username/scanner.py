@@ -116,11 +116,11 @@ async def scanner(username: [str] = None, csv_output: bool = False) -> None:
             output_data.append([name, result['url'], result['result']])
 
     if csv_output and output_data:
-        with open("results.csv", mode='w', newline='', encoding='utf-8') as file:
+        with open("username_scanner_results.csv", mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
             writer.writerow(["Service", "URL", "Exists"])
             writer.writerows(output_data)
-        console.print(f"[bold blue]Results saved to results.csv[/bold blue]")
+        console.print(f"[bold blue]Results saved to username_scanner_results.csv[/bold blue]")
 
 # loop = asyncio.get_running_loop()
 # with ThreadPoolExecutor(max_workers=3) as executor:
