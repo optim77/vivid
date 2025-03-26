@@ -23,7 +23,7 @@ async def cli():
     parser = argparse.ArgumentParser(description="Welcome to vivid")
     parser.add_argument("-u", type=str, nargs="?", help="Username to check")
     parser.add_argument("-e", type=str, nargs="?", help="Email to check")
-    parser.add_argument("-p", type=str, nargs="?", help="Use inserted proxy")
+    parser.add_argument("-p", type=str, action="store_true", default=False, help="Use inserted proxy")
     parser.add_argument("-d", type=str, nargs="+", help="Domain to validate a single domain (e.g., gmail) or a collection (e.g., gmail, amazon)")
     parser.add_argument("-l", action="store_true", help="List available domains")
     parser.add_argument("-csv", action="store_true", default=False, help="Export result to csv file")
