@@ -3,12 +3,13 @@ import random
 
 import dns.resolver
 import concurrent.futures
+
 from rich.console import Console
 
 def load_subdomains(filename):
     console = Console()
     try:
-        with open(filename, "r") as file:
+        with open(f'sub_fuzzer/{filename}', "r") as file:
             return [line.strip() for line in file if line.strip()]
     except FileNotFoundError:
         console.print(f"[bold red] File {filename} not found.[/bold red]")
@@ -22,13 +23,26 @@ def load_proxies(filename):
         print(f"[bold red] File {filename} not found.[/bold red]")
         return []
 
+def format_domain(domain, sub):
+    if 'http://' in domain:
+        domain = domain.split('http://')
+        return f'http://{sub}.{domain[1]}'
+    if 'https://' in domain:
+        domain = domain.split('https://')
+        return f'https://{sub}.{domain[1]}'
+    if 'www.' in domain:
+        domain = domain.split('www.')
+        return f'www.{sub}.{domain[1]}'
+
 def check_subdomain(domain, sub, use_proxy, proxies, results):
-    full_domain = f"{sub}.{domain}"
+    console = Console()
+    full_domain = format_domain(domain, sub)
+    print(full_domain)
     proxy_used = None
 
     if use_proxy and proxies:
         proxy_used = random.choice(proxies)
-        print(f"[*] Używanie proxy: {proxy_used}")
+        print(f"[bold green] Use proxy: {proxy_used}[/bold green]")
 
     try:
         resolver = dns.resolver.Resolver()
@@ -37,14 +51,14 @@ def check_subdomain(domain, sub, use_proxy, proxies, results):
             resolver.nameservers = ["1.1.1.1"]
 
         resolver.resolve(full_domain, "A")
-        print(f"[bold green] Found: {full_domain}[/bold green]")
+        console.print(f"[bold green] Found: {full_domain}[/bold green]")
         results.append((full_domain, "Found", proxy_used))
     except dns.resolver.NXDOMAIN:
-        print(f"[bold red] Not exists: {full_domain}[/bold red]")
+        console.print(f"[bold red] Not exists: {full_domain}[/bold red]")
     except dns.resolver.NoAnswer:
-        print(f"[bold red] Brak odpowiedzi dla: {full_domain}[/bold red]")
+        console.print(f"[bold red] No answer for: {full_domain}[/bold red]")
     except dns.exception.Timeout:
-        print(f"[bold red] Timeout: {full_domain}[/bold red]")
+        console.print(f"[bold red] Timeout: {full_domain}[/bold red]")
 
 
 def run_fuzzer(domain, use_proxy=False, export_csv=False):
@@ -52,7 +66,7 @@ def run_fuzzer(domain, use_proxy=False, export_csv=False):
     results = []
     subdomains = load_subdomains("subdomains.txt")
     with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        futures = [executor.submit(domain, check_subdomain, sub, use_proxy, proxies, results) for sub in subdomains]
+        futures = [executor.submit(check_subdomain, domain, sub, use_proxy, proxies, results) for sub in subdomains]
         concurrent.futures.wait(futures)
 
     if export_csv:
@@ -60,4 +74,4 @@ def run_fuzzer(domain, use_proxy=False, export_csv=False):
             writer = csv.writer(file)
             writer.writerow(["Subdomain", "Status", "Proxy"])
             writer.writerows(results)
-        print("[bold green] Saved to results.csv[/bold green]")
+        console.print("[bold green] Saved to results.csv[/bold green]")
