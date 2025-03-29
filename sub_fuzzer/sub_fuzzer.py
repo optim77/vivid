@@ -5,9 +5,9 @@ import dns.resolver
 import concurrent.futures
 
 from rich.console import Console
+console = Console()
 
 def load_subdomains(filename):
-    console = Console()
     try:
         with open(f'sub_fuzzer/{filename}', "r") as file:
             return [line.strip() for line in file if line.strip()]
@@ -35,7 +35,6 @@ def format_domain(domain, sub):
         return f'www.{sub}.{domain[1]}'
 
 def check_subdomain(domain, sub, use_proxy, proxies, results):
-    console = Console()
     full_domain = format_domain(domain, sub)
     print(full_domain)
     proxy_used = None
