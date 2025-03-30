@@ -11,7 +11,7 @@ async def fuzzer(domain: str, proxy: bool = False, csv_output=False):
     if proxy:
         with open('../proxy.txt', 'r') as f:
             proxies = f.read().splitlines()
-    with open('fuzzer/url_fuzzer_list.txt', 'r') as f:
+    with open('path_fuzzer/url_fuzzer_list.txt', 'r') as f:
         endpoint = f.readlines()
         for e in endpoint:
             e = e.replace('\n', '').replace('/', '')

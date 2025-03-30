@@ -1,7 +1,7 @@
 import argparse
 from rich.console import Console
 
-from fuzzer.fuzzer import fuzzer
+from path_fuzzer.fuzzer import fuzzer
 from scanner.gravatar.gravatar import gravatar
 from scanner.username.scanner import scanner
 import pkgutil
